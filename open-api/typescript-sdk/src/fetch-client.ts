@@ -3506,7 +3506,9 @@ export enum EntityType {
 export enum ManualJobName {
     PersonCleanup = "person-cleanup",
     TagCleanup = "tag-cleanup",
-    UserCleanup = "user-cleanup"
+    UserCleanup = "user-cleanup",
+    MemoryCleanup = "memory-cleanup",
+    MemoryCreate = "memory-create"
 }
 export enum JobName {
     ThumbnailGeneration = "thumbnailGeneration",

@@ -95,6 +95,9 @@ export enum JobName {
   CLEAN_OLD_AUDIT_LOGS = 'clean-old-audit-logs',
   CLEAN_OLD_SESSION_TOKENS = 'clean-old-session-tokens',
 
+  MEMORIES_CLEANUP = 'memories-cleanup',
+  MEMORIES_CREATE = 'memories-create',
+
   // smart search
   QUEUE_SMART_SEARCH = 'queue-smart-search',
   SMART_SEARCH = 'smart-search',
@@ -267,6 +270,10 @@ export type JobItem =
   // Duplicate Detection
   | { name: JobName.QUEUE_DUPLICATE_DETECTION; data: IBaseJob }
   | { name: JobName.DUPLICATE_DETECTION; data: IEntityJob }
+
+  // Memories
+  | { name: JobName.MEMORIES_CLEANUP; data?: IBaseJob }
+  | { name: JobName.MEMORIES_CREATE; data?: IBaseJob }
 
   // Filesystem
   | { name: JobName.DELETE_FILES; data: IDeleteFilesJob }

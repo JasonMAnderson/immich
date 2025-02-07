@@ -9702,7 +9702,9 @@
         "enum": [
           "person-cleanup",
           "tag-cleanup",
-          "user-cleanup"
+          "user-cleanup",
+          "memory-cleanup",
+          "memory-create"
         ],
         "type": "string"
       },
