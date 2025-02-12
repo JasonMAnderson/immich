@@ -16,7 +16,6 @@ const DAYS = 3;
 export class MemoryService extends BaseService {
   @OnJob({ name: JobName.MEMORIES_CREATE, queue: QueueName.BACKGROUND_TASK })
   async onMemoriesCreate() {
-    console.log('onMemoriesCreate');
     const users = await this.userRepository.getList({ withDeleted: false });
     const userMap: Record<string, string[]> = {};
     for (const user of users) {
@@ -70,8 +69,6 @@ export class MemoryService extends BaseService {
 
   @OnJob({ name: JobName.MEMORIES_CLEANUP, queue: QueueName.BACKGROUND_TASK })
   async onMemoriesCleanup() {
-    console.log('onMemoriesCleanup');
-
     await this.memoryRepository.cleanup();
   }
 

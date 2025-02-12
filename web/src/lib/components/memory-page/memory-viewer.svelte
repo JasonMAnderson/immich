@@ -50,6 +50,8 @@
     mdiChevronRight,
     mdiChevronUp,
     mdiDotsVertical,
+    mdiHeart,
+    mdiHeartOutline,
     mdiImageMinusOutline,
     mdiImageSearch,
     mdiPause,
@@ -451,13 +453,14 @@
             >
               <div class="flex">
                 <IconButton
-                  icon={isSaved ? mdiStar : mdiStarOutline}
+                  icon={isSaved ? mdiHeart : mdiHeartOutline}
                   shape="round"
                   variant="ghost"
                   size="giant"
                   color="secondary"
                   aria-label={isSaved ? $t('unfavorite') : $t('favorite')}
                   onclick={() => handleSaveMemory(current)}
+                  class="text-white dark:text-white"
                 />
                 <!-- <IconButton
                   icon={mdiShareVariantOutline}
@@ -473,6 +476,7 @@
                   onclick={() => handleAction('pause')}
                   direction="left"
                   align="bottom-right"
+                  class="text-white dark:text-white"
                 >
                   <MenuOption
                     onClick={() => handleDeleteMemory(current)}
@@ -497,6 +501,7 @@
                   variant="ghost"
                   shape="round"
                   size="giant"
+                  class="text-white dark:text-white"
                 />
               </div>
             </div>
