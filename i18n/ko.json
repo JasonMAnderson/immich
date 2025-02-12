@@ -1080,6 +1080,8 @@
   "search": "검색",
   "search_albums": "앨범 검색",
   "search_by_context": "내용 검색",
+  "search_by_description": "설명으로 검색",
+  "search_by_description_example": "사파에서 즐기는 하이킹",
   "search_by_filename": "파일명 또는 확장자로 검색",
   "search_by_filename_example": "예시: IMG_1234.JPG or PNG",
   "search_camera_make": "카메라 제조사 검색...",
