@@ -6,8 +6,7 @@ import { BulkIdResponseDto, BulkIdsDto } from 'src/dtos/asset-ids.response.dto';
 import { AuthDto } from 'src/dtos/auth.dto';
 import { MemoryCreateDto, MemoryResponseDto, MemoryUpdateDto, mapMemory } from 'src/dtos/memory.dto';
 import { OnThisDayData } from 'src/entities/memory.entity';
-import { MemoryType, Permission, SystemMetadataKey } from 'src/enum';
-import { JobName, QueueName } from 'src/interfaces/job.interface';
+import { JobName, MemoryType, Permission, QueueName, SystemMetadataKey } from 'src/enum';
 import { BaseService } from 'src/services/base.service';
 import { addAssets, getMyPartnerIds, removeAssets } from 'src/utils/asset.util';
 
@@ -17,6 +16,7 @@ const DAYS = 3;
 export class MemoryService extends BaseService {
   @OnJob({ name: JobName.MEMORIES_CREATE, queue: QueueName.BACKGROUND_TASK })
   async onMemoriesCreate() {
+    console.log('onMemoriesCreate');
     const users = await this.userRepository.getList({ withDeleted: false });
     const userMap: Record<string, string[]> = {};
     for (const user of users) {
@@ -70,6 +70,8 @@ export class MemoryService extends BaseService {
 
   @OnJob({ name: JobName.MEMORIES_CLEANUP, queue: QueueName.BACKGROUND_TASK })
   async onMemoriesCleanup() {
+    console.log('onMemoriesCleanup');
+
     await this.memoryRepository.cleanup();
   }
 
